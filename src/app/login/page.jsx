@@ -21,7 +21,8 @@ export default function Page() {
         setUser(user);
       }
     })
-  }, []);
+    // console.log("rerender!")
+  }, [user]);
 
   if (user) {
     return <div className={ "flex flex-col items-center justify-center h-screen gap-2" }>

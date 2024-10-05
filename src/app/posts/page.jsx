@@ -5,7 +5,7 @@ import theme from "@/app/theme";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import app from "@/app/firebase";
 import {collection, getDocs, getFirestore, query} from "firebase/firestore";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const storage = getStorage(app)
 const firestore = getFirestore(app)
@@ -31,6 +31,15 @@ export const getImageFBS = async (path, useThumbnail = true) => {
 export const getPosts = async () => {
   const q = query(collection(firestore, "posts"))
   const snapshot = await getDocs(q)
+  // return ([{
+  //   id: "1",
+  //   title: "title",
+  //   about: "about",
+  //   body: "body",
+  //   author: "author",
+  //   date: "date",
+  //   gallery: ["1"]
+  // }]);
 
   return snapshot.docs.map((doc) => ({
     id: doc.id,
@@ -55,7 +64,8 @@ export default function Page() {
 
     fetchPosts();
     setMounted(true)
-  }, [posts]);
+    console.log("rerender!")
+  }, []);
 
 
   return !mounted ? null : (

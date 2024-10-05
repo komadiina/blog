@@ -27,7 +27,9 @@ export const Dashboard = () => {
     auth.onAuthStateChanged((user) => {
       setUser(user)
     })
-  }, []);
+
+    console.log("rerender!")
+  }, [user]);
 
   const onDrop = useCallback(acceptedFiles => {
     let joined = images.concat(acceptedFiles)
