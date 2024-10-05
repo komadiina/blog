@@ -3,12 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --value: #fe;
+  --background: #fefefe;
   --foreground: #171717;
+}
+
+.dark {
+  color: #0a0a0a;
+  /*background: #0a0a0a;*/
+}
+
+.dark-bg {
+  background: #fefefe;
+}
+
+.light {
+  color: #fefefe;
+}
+
+.h-full-vh {
+  height: 100vh;
+}
+
+.w-full-vw {
+  width: 100vw;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --value: #0a;
     --background: #0a0a0a;
     --foreground: #ededed;
   }
@@ -17,11 +40,74 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+
+  background-color: #000000;
+  opacity: 0.7;
+  background-image:
+      radial-gradient(#151515 1.35px, transparent 1.35px),
+      radial-gradient(#151515 1.35px, #000000 1.25px);
+  background-size: 54px 54px;
+  background-position: 0 0,27px 27px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.input-no-bg {
+  background: rgba(var(--value), var(--value), var(--value), 0);
+  color: rgb(
+          calc(clamp(255.0 -  var(--value), 0, 255)),
+          calc(clamp(255.0 -  var(--value), 0, 255)),
+          calc(clamp(255.0 -  var(--value), 0, 255))
+        );
+}
+
+.offset-top {
+  position: absolute;
+  top: 33vh;
+}
+
+.h-big {
+  height: 50vh;
+}
+
+.cropped-post-header {
+  aspect-ratio: 16/9;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.gallery-member {
+
+}
+
+.controls {
+  display: flex;
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 10px;
+}
+
+.controls-right {
+  margin-left: auto;
+}
+
+.state {
+  margin: 10px 0;
+  font-family: monospace;
+}
+
+.state-title {
+  color: #999;
+  text-transform: uppercase;
+}
+
+.ql-toolbar.ql-snow {
+  border: 0;
+  border-radius: 0.1rem;
 }

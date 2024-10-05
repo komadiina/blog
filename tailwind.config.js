@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+        serif: ['Gowun Batang', 'serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

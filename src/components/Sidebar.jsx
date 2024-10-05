@@ -34,7 +34,7 @@ export default function Sidebar() {
         hidden
           ? <div className={""}>
             <FontAwesomeIcon icon={faBars} aria-hidden className={`antialiased z-50 text-3xl align-middle fixed bottom-0 p-4 m-4 ease-in-out 
-                transition-opacity duration-300 hover:cursor-pointer
+                transition-all duration-200 hover:cursor-pointer hover:bg-opacity-25 bg-white bg-opacity-0 rounded-lg
                 ${hidden ? "opacity-100" : "opacity-0"}`}
                              onClick={() => {
                                setHidden(false);
@@ -76,7 +76,7 @@ export default function Sidebar() {
             <button className={"my-2 pl-2 w-full h-12 rounded-lg inline align-middle hover:bg-black hover:bg-opacity-10 transition-all duration-300"}
               onClick={() => router.push("/dashboard")}
             >
-              Panel
+              Nova objava
             </button>
             <button
               className={"my-2 pl-2 w-full h-12 rounded-lg inline align-middle hover:bg-black hover:bg-opacity-10 transition-all duration-300"}
@@ -86,7 +86,7 @@ export default function Sidebar() {
           ) : (
             <button
               className={"my-2 pl-2 w-full h-12 rounded-lg inline align-middle hover:bg-black hover:bg-opacity-10 transition-all duration-300"}
-              onClick={() => router.push("/dashboard")}>Prijava
+              onClick={() => router.push("/login")}>Prijava
             </button>
           )}
         </div>

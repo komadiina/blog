@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sdzwildlifeexplorers.org",
+        port: '',
+        pathname: "/*",
+      }
+    ]
+  },
+  reactStrictMode: false
+};
 
 export default nextConfig;
